@@ -60,34 +60,6 @@
             z-index: -2; /* Canvas būs zem visiem citiem elementiem */
         }
 
-        .lebron-face {
-            position: fixed;
-            width: 60px; /* Izmērs var tikt pielāgots */
-            height: 60px; /* Izmērs var tikt pielāgots */
-            border-radius: 50%;
-            background-size: cover;
-            z-index: -1; /* Pārliecinās, ka attēli būs zem lapas saturiem */
-            animation: flyAround 20s infinite linear;
-        }
-
-        @keyframes flyAround {
-            0% {
-                transform: translateX(-100px) translateY(-100px);
-            }
-            25% {
-                transform: translateX(100vw) translateY(-100px);
-            }
-            50% {
-                transform: translateX(100vw) translateY(100vh);
-            }
-            75% {
-                transform: translateX(-100px) translateY(100vh);
-            }
-            100% {
-                transform: translateX(-100px) translateY(-100px);
-            }
-        }
-
     </style>
 </head>
 <body id="top">
@@ -153,78 +125,4 @@
             <img src="https://cdn.nba.com/headshots/nba/latest/1040x760/2544.png" alt="LeBron James" class="hero-image" style="max-width: 100%; height: auto; border-radius: 10px;">
             
             <div class="text-center mt-4">
-                <a href="#top" class="btn btn-secondary">⬅️ Uz sākumu</a>
-            </div>
-        </div>
-    </section>
-
-</main>
-
-<!-- Canvas animācija apakšā -->
-<canvas id="myCanvas"></canvas>
-<script>
-    const canvas = document.getElementById("myCanvas");
-    const ctx = canvas.getContext("2d");
-
-    // Pārliecināmies, ka canvas pārklāj visu ekrānu
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-
-    class FloatingBox {
-        constructor() {
-            this.reset();
-        }
-
-        reset() {
-            this.x = Math.random() * canvas.width;
-            this.y = Math.random() * -canvas.height;
-            this.size = Math.random() * 12 + 8;
-            this.speed = Math.random() * 1.5 + 0.5;
-            this.color = `rgba(38, 70, 83, ${Math.random() * 0.5 + 0.3})`;
-        }
-
-        update() {
-            this.y += this.speed;
-            if (this.y > canvas.height) this.reset();
-            this.draw();
-        }
-
-        draw() {
-            ctx.fillStyle = this.color;
-            ctx.fillRect(this.x, this.y, this.size, this.size);
-        }
-    }
-
-    const boxes = Array.from({ length: 120 }, () => new FloatingBox());
-
-    function animate() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        boxes.forEach(box => box.update());
-        requestAnimationFrame(animate);
-    }
-
-    animate();
-</script>
-
-<script>
-    // Pievienojam LeBron attēlu animāciju
-    const lebronFaceCount = 10; // Cik daudz LeBron attēlu ir uz ekrāna
-    const lebronImages = [];
-
-    // Izveidojam LeBron attēlus
-    for (let i = 0; i < lebronFaceCount; i++) {
-        const lebron = document.createElement('div');
-        lebron.classList.add('lebron-face');
-        lebron.style.backgroundImage = "url('https://cdn.nba.com/headshots/nba/latest/1040x760/2544.png')";
-        document.body.appendChild(lebron);
-        lebronImages.push(lebron);
-    }
-</script>
-
-</body>
-</html>
-
-</script>
-
-</body>
-</html>
+                <a href="#top"
