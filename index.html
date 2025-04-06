@@ -59,11 +59,6 @@
             height: 100vh;
             z-index: -1;
         }
-
-        .hero-image {
-            max-width: 100%;
-            border-radius: 8px;
-        }
     </style>
 </head>
 <body id="top">
@@ -78,7 +73,7 @@
             <div class="collapse navbar-collapse" id="menu">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="#top">Sākums</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#varoņi">Mani varoņi</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#projekts">Projekts</a></li>
                 </ul>
             </div>
         </div>
@@ -114,15 +109,20 @@
             <p>tas viss pagaidām!</p>
         </div>
 
-        <!-- Sadaļa 'Mani varoņi' -->
-        <div class="info-card" id="varoņi">
-            <h2>Mani varoņi</h2>
-            <p>Viens no maniem lielākajiem varoņiem ir LeBron James – basketbolists, kuru ļoti apbrīnoju par viņa talantu, darbu un ieguldījumu gan laukumā, gan ārpus tā.</p>
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/LeBron_James_2016.jpg/440px-LeBron_James_2016.jpg" alt="LeBron James" class="hero-image">
+        <div class="info-card" id="projekts">
+            <h2>Projekts: Choose Your Own Adventure</h2>
+            <p>Spēle veidota Python valodā ar teksta izvēlēm. Spēlētājs iziet cauri dažādiem scenārijiem, pamatojoties uz izvēlēm. Interaktīvs, loģisks un jautrs projekts, kas parāda programmēšanas pamatu izpratni.</p>
+            <p><a href="https://github.com/RaimondsPolis/choose-your-own-adventure" target="_blank">Skatīt projektu GitHub</a></p>
 
             <div class="text-center mt-4">
                 <a href="#top" class="btn btn-secondary">⬅️ Uz sākumu</a>
             </div>
+        </div>
+
+        <!-- Mani varoņi sadaļa -->
+        <div class="info-card">
+            <h2>Mani varoņi</h2>
+            <img src="https://cdn.nba.com/headshots/nba/latest/1040x760/2544.png" alt="LeBron James" class="hero-image" style="max-width: 100%; height: auto; border-radius: 10px;">
         </div>
 
     </section>
@@ -158,5 +158,20 @@
 
         draw() {
             ctx.fillStyle = this.color;
-            ctx.fill
+            ctx.fillRect(this.x, this.y, this.size, this.size);
+        }
+    }
 
+    const boxes = Array.from({ length: 120 }, () => new FloatingBox());
+
+    function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        boxes.forEach(box => box.update());
+        requestAnimationFrame(animate);
+    }
+
+    animate();
+</script>
+
+</body>
+</html>
