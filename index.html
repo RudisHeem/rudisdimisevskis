@@ -14,7 +14,7 @@
             padding: 0;
             background-color: #eef6f9;
             font-family: 'Verdana', sans-serif;
-            overflow: hidden;
+            overflow-x: hidden; /* Nodrošina, ka lapa nepārsniedz platumu */
             color: #222;
         }
 
@@ -73,6 +73,10 @@
             <div class="collapse navbar-collapse" id="menu">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="#top">Sākums</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#par-mani">Par mani</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#izglitiba">Izglītība</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#darba-pieredze">Darba pieredze</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#varoņi">Mani varoņi</a></li>
                 </ul>
             </div>
         </div>
@@ -84,8 +88,7 @@
         <h1 class="page-title">Rūda CV</h1>
     </div>
 
-    <section class="info-section">
-
+    <section id="par-mani" class="info-section">
         <div class="info-card">
             <h2>Info par mani</h2>
             <p><strong>Vārds:</strong> Rūdis Dimiševskis</p>
@@ -94,24 +97,29 @@
             <p><strong>Hobiji:</strong> ēšana, svaru cilāšana</p>
             <p><strong>Prasmes:</strong> svaru cilāšana, meiteņu dabūšana</p>
         </div>
+    </section>
 
+    <section id="izglitiba" class="info-section">
         <div class="info-card">
             <h2>Izglītība</h2>
             <p>9. klases izglītība, cerams, ka pēc neilga laika arī 12. klases</p>
             <p>Padziļinātie priekšmeti: matemātika, bioloģija, ķīmija</p>
             <p>Pirmās palīdzības kurss</p>
         </div>
+    </section>
 
+    <section id="darba-pieredze" class="info-section">
         <div class="info-card">
             <h2>Darba pieredze</h2>
             <p>audzinātājs bērnu vasaras nometnē</p>
             <p>tas viss pagaidām!</p>
         </div>
+    </section>
 
-        <!-- Mani varoņi sadaļa -->
+    <section id="varoņi" class="info-section">
         <div class="info-card">
             <h2>Mani varoņi</h2>
-            <p>LeBron James ir viens no labākajiem basketbolistiem pasaulē, un viņš ir mans iedvesmas avots. Viņa talants un smagais darbs laukumā ir apbrīnojams, un viņš ir kļuvusi par simbolu tam, kā būtu jāstrādā un jādzīvo, lai sasniegtu lielas lietas. Ne tikai kā sportists, bet arī kā cilvēks ārpus laukuma, viņš ir lielisks līderis un mentorē daudzas jaunās paaudzes. LeBron man ir svarīgs, jo viņa darbība ir apliecinājums tam, ka ar neatlaidību un smagu darbu var sasniegt ikvienu mērķi dzīvē.</p>
+            <p>LeBron James ir labākais cilvēks pasaulē. Viņš nav tikai izcils basketbolists, bet arī simbols smagam darbam, neatlaidībai un veltīšanai savai komandai un līdzcilvēkiem. Viņa talants un neatlaidība laukumā ir nepārspējama, bet ārpus laukuma viņš ir ne tikai ģimenes cilvēks, bet arī labdarības atbalstītājs, mentorējošs līderis un pozitīvs paraugs tūkstošiem jauniešu visā pasaulē. LeBron James ir dzīves pierādījums tam, ka ar smagu darbu, vīziju un neatlaidību var sasniegt neiedomājami augstus mērķus. Viņš ir daudz vairāk nekā sportists – viņš ir dzīves meistars un īsts varonis!</p>
             
             <img src="https://cdn.nba.com/headshots/nba/latest/1040x760/2544.png" alt="LeBron James" class="hero-image" style="max-width: 100%; height: auto; border-radius: 10px;">
             
@@ -119,8 +127,8 @@
                 <a href="#top" class="btn btn-secondary">⬅️ Uz sākumu</a>
             </div>
         </div>
-
     </section>
+
 </main>
 
 <!-- Canvas animācija apakšā -->
