@@ -57,7 +57,7 @@
             left: 0;
             width: 100vw;
             height: 100vh;
-            z-index: -1;
+            z-index: -1; /* Nodrošina, ka canvas būs zem visiem citiem elementiem */
         }
     </style>
 </head>
@@ -137,6 +137,7 @@
     const canvas = document.getElementById("myCanvas");
     const ctx = canvas.getContext("2d");
 
+    // Pārliecināmies, ka canvas pārklāj visu ekrānu
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
